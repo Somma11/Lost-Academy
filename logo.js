@@ -1,48 +1,68 @@
 (function(){
 
-function replaceLogo(){
+const DRAGON="https://raw.githubusercontent.com/Somma11/Lost-Academy/main/oneko/dragon.png";
 
-const logo = document.querySelector('[data-testid="header-logo"]');
-if(!logo) return;
+function applyLogo(){
 
-const container = document.createElement("div");
-container.style.display = "flex";
-container.style.alignItems = "center";
-container.style.gap = "10px";
+const link=document.querySelector('[data-testid="header-logo"]');
+if(!link || link.dataset.lostApplied) return;
 
-/* Ícone do dragão */
+link.dataset.lostApplied="1";
 
-const img = document.createElement("img");
-img.src = "https://raw.githubusercontent.com/Somma11/Lost-Academy/main/oneko/dragon.png";
-img.style.height = "34px";
-img.style.imageRendering = "pixelated";
+/* limpar logo antigo */
 
-/* Texto */
+link.innerHTML="";
 
-const h1 = document.createElement("h1");
-h1.textContent = "LostAcademy";
-h1.style.margin = "0";
-h1.style.fontSize = "28px";
-h1.style.fontWeight = "900";
-h1.style.fontFamily = "system-ui, sans-serif";
-h1.style.color = "#6a2fa3";
-h1.style.textShadow = "0 0 8px rgba(106,47,163,0.6)";
-h1.style.letterSpacing = "1px";
+/* container */
+
+const wrap=document.createElement("div");
+wrap.style.display="flex";
+wrap.style.alignItems="center";
+wrap.style.gap="8px";
+
+/* dragão */
+
+const img=new Image();
+img.src=DRAGON;
+img.style.height="30px";
+img.style.imageRendering="pixelated";
+
+/* texto */
+
+const text=document.createElement("span");
+text.textContent="Lost Academy";
+
+text.style.fontSize="24px";
+text.style.fontWeight="900";
+text.style.fontFamily="system-ui";
+text.style.color="#6a2fa3";
+text.style.textShadow="0 0 6px rgba(106,47,163,.6)";
 
 /* montar */
 
-container.appendChild(img);
-container.appendChild(h1);
-
-logo.replaceWith(container);
+wrap.appendChild(img);
+wrap.appendChild(text);
+link.appendChild(wrap);
 
 }
 
-replaceLogo();
+/* tentar aplicar imediatamente */
 
-new MutationObserver(replaceLogo).observe(document.body,{
+applyLogo();
+
+/* observar só até encontrar */
+
+const obs=new MutationObserver(()=>{
+applyLogo();
+});
+
+obs.observe(document.documentElement,{
 childList:true,
 subtree:true
 });
+
+/* parar observer após 5s */
+
+setTimeout(()=>obs.disconnect(),5000);
 
 })();

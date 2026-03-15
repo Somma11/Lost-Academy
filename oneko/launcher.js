@@ -1,5 +1,5 @@
 (function () {
-    const spriteUrl = "https://github.com/Somma11/Llost-Academy/blob/main/oneko/fenrir.png?raw=true"; // Certifique-se que o nome está igual
+    const spriteUrl = "https://github.com/Somma11/Lost-Academy/blob/main/oneko/fenrir.png?raw=true"; // Certifique-se que o nome está igual
     
     // O Oneko original usa 32x32, mas a imagem da IA é grande.
     // Vamos definir quantas COLUNAS e LINHAS a imagem tem.

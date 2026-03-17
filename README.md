@@ -83,8 +83,8 @@ Lost-Academy/
 │
 ├── logo.js           # Renders the Lost Academy overlay/logo
 │
-└── oneko/            # Oneko module — classic animated cat that
-                      # follows your mouse cursor (90s easter egg)
+└── oneko/            # Oneko module — animated dragon that
+                      # follows your mouse cursor around the page
 ```
 
 ---
@@ -101,9 +101,9 @@ Lost-Academy/
 
 ---
 
-## 🐾 Oneko Module
+## 🐉 Oneko Module
 
-The `oneko` module renders a pixel-art cat sprite that chases your cursor around the screen. It's a tribute to the original **Oneko** app from 1989 — one of the earliest examples of interactive desktop pets.
+The `oneko` module renders an animated dragon sprite that chases your cursor around the screen. A custom twist on the classic **Oneko** concept — but instead of a cat, you get a dragon roaming across Khan Academy's UI.
 
 Totally useless. Absolutely necessary.
 

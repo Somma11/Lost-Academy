@@ -56,8 +56,13 @@ All scripts are fetched **at runtime** from jsDelivr's global CDN, which mirrors
 
 ### Step 1 — Copy the bookmarklet payload
 
+#### 💻 - Computer bookmarklet
 ```javascript
 javascript:(()=>{const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/gh/Somma11/Lost-Academy@refs/heads/main/loader.js";s.onload=()=>console.log("[Lost Academy] loader.js carregado");s.onerror=()=>console.error("[Lost Academy] Falha ao carregar loader.js");document.head.appendChild(s);})();
+```
+#### 📱 - Mobile bookmarklet
+```javascript
+javascript:(()=>{const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/gh/Somma11/Lost-Academy@refs/heads/main/loader-mobile.js";s.onload=()=>console.log("[Lost Academy] loader-mobile.js carregado");s.onerror=()=>console.error("[Lost Academy] Falha ao carregar loader-mobile.js");document.head.appendChild(s);})();
 ```
 
 ### Step 2 — Create a new bookmark

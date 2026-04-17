@@ -2,3 +2,11 @@ khanacademy.js
 loader-dec.js
 ignore/*
 *-dec.js
+graphify-out/*
+.claude/*
+_cerebro
+node_modules/
+package.json
+package-lock.json
+supabase.sql
+obfuscate.js
